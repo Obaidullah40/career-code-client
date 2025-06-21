@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import useAuth from '../hooks/useAuth';
 import ApplicationStats from './ApplicationStats';
 import ApplicationList from './ApplicationList';
-import { myApplicationsPromise } from '../api/applicstionsApi';
+import useApplicationApi from '../api/useApplicationApi';
 
 const MyApplications = () => {
     const { user } = useAuth();
-//  console.log(user.accessToken);
+    const {myApplicationsPromise} =useApplicationApi();
  
     return (
         <div>
